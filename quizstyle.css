@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color:#acaaf4;
+    color:#000000;
+    background-size: 400% 400%;
+    animation: colorChange 9s infinite;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row {
+    display: inline-flex; 
+    justify-content: space-around;/* Display rows as inline blocks */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex-basis: calc(50% - 20px); /* Adjust as needed */
+    margin-bottom: 20px;
+    margin: 30px 30px 30px 30px;
+    background-color: #fcf2fb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 40%
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+.card a.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex-basis: calc(50% - 20px); /* Display two cards per row on smaller screens */
+    }
+}
+
+
+@keyframes colorChange {
+    0% {
+        background-color: #d1d0ff;
+    }
+    33.33% {
+        background-color: #cefeff;
+    }
+    66.66% {
+        background-color: #f6bfef;
+    }
+    100% {
+        background-color: #d1d0ff;
+    }
+}

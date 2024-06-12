@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="./images/favicon.png" type="image/png" sizes="16x16">
+<title>Forum</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="initialize.js"></script> -->
+    <style>
+      .bttn {
+              border: none;
+              width: 100%;
+              background-color:dodgerblue ;
+              color: aliceblue;
+              padding: 10px 24px;
+              font-size: 16px;
+              font-weight: 600;
+              cursor: pointer;
+              display: block ;
+              position: absolute;
+              top: 0;
+              left: 0;
+              
+              z-index: 1000;
+              }
+
+              .bttn:hover {background: rgb(95, 206, 243);}
+    </style>
+</head>
+<body>
+<a href="home.html" class="bttn home">Home</a>
+<div class="container">
+
+<div class="panel panel-default" style="margin-top:50px">
+  <div class="panel-body">
+    <h3>Community forum</h3>
+    <hr>
+    <form name="frm" id="form1">
+	<div class="form-group">
+	  <label for="usr">Write your name:</label>
+	  <input type="text" class="form-control" name="name" required>
+	</div>
+    <div class="form-group">
+      <label for="comment">Write your question:</label>
+      <textarea class="form-control" rows="5" name="msg" required></textarea>
+    </div>
+	 <input type="submit" id="butsave" name="save" class="btn btn-primary" value="Submit">
+  </form>
+  </div>
+</div>
+  
+<h4>Recent questions</h4>  
+    <div id="questions"></div>
+</div>
+
+</div>
+<script src="compg.js.js"></script>
+<footer>
+  <style>
+      footer{
+      background: gray;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+              }
+      .copyright {
+                  margin-top: calc(100%-10px);
+                  font-size: 15px;
+                  margin-bottom: 0;
+                  top: calc(100%-15px);
+                  text-align: center;
+                  width: 100%;
+                  height: 20px;
+                  position: absolute;
+                  bottom: 0;
+      }
+      </style>
+      <div class="copyright">
+              <h6> © New Horizon College of Engineering </h6>
+      </div> 
+</footer>
+
+</body>
+</html>

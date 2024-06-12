@@ -1,0 +1,73 @@
+<html> 
+    <head>
+        <title>sign up form</title>
+
+        <link rel="stylesheet" href="login.css">
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+    </head>       
+    <body>    
+        <section>
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="" id="registerForm">
+                        <h2>Signup</h2>
+
+                        <div class="inputbox">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <input name="email" type="email" required />
+                            <label for="">Email</label>
+                        </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input name="password" type="password" required />
+                        <label for="">New Password</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input name="cpassword" type="password" required />
+                        <label for="">Confirm Password</label>
+                    </div>
+                    
+                <button class="button">Signup Now</button>
+
+                <div class="register">Already a member? <a href="login.html" id="login">Login</a></div>
+                </form>
+            </div>
+        </section> 
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script>
+            let form = document.getElementById("registerForm")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            const formData = new FormData(e.target)
+            let values = Object.fromEntries(formData.entries())
+            console.log(values)
+            let newData = []
+            let staleData = JSON.parse(localStorage.getItem('auth'))
+            if(staleData)  newData = [...staleData,{
+                    email:values.email,
+                    password:values.password
+                }]
+            else newData = [...newData,{
+                    email:values.email,
+                    password:values.password
+                }]
+                console.log(newData)
+            if(values.password === values.cpassword){
+               
+                localStorage.setItem('auth',JSON.stringify(newData))
+                alert("Successfully registered")
+                window.location.href = 'home.html'
+            }
+                
+            else alert("Password must match confirm password")
+        })
+        </script>
+    </body>
+</html>

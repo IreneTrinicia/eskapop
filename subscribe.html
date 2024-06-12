@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csssub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Newsletter subscription</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h1><b>Join Our Newsletter</b></h1>
+            <p><b>You can now receive the latest updates and a backstage pass to the enchanting world of K-Pop. Let's groove together! 🎶🌟</b></p>
+            <div class="email-box">
+                <i class="fas fa-envelope"></i>
+                <input class="tbox" type="email" name="" value="" placeholder="Enter your email id">
+                <button class="btn" type="button" name="button" onclick="openPopup()">Subscribe</button>
+                <div class="popup" id="popup">
+                    <img src="images/tick.png">
+                    <h2>Thank You!</h2>
+                    <p>You are now subscribed!!</p>
+                    <button type="button" onclick="closePopupAndRedirect()">OK</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<script>
+    let popup=document.getElementById("popup");
+    function openPopup(){
+        popup.classList.add("open-popup");
+    }
+    function closePopupAndRedirect(){
+        popup.classList.remove("open-popup");
+        window.location.href="home.html";
+    }
+</script>   
+</body>
+</html>
